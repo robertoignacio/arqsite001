@@ -1,16 +1,17 @@
 ---
 // nested components
-import Social from './Social.astro';
+import UrlLink from './UrlLink.astro';
 
 ---
 <style>
     footer {
         display: flex;
+        flex-direction: row;
         gap: 1rem;
         margin-top: 2rem;
     }
 </style>
 
 <footer>
-    <Social platform="github" username="robertoignacio" />
+    <UrlLink platform="github" username="robertoignacio" />
 </footer>

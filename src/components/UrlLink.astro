@@ -1,0 +1,5 @@
+---
+// prop forwarder
+const { platform, username } = Astro.props;
+---
+<a href={`https://www.${platform}.com/${username}`} class="url-link">{platform}</a>

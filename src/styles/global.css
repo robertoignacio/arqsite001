@@ -1,7 +1,7 @@
 /* reset margin flow */
 @import "./reset.css";
 
-/* globals */
+/* html element globals */
 
 html {
     background-color: #393f46;
@@ -27,6 +27,13 @@ h1 {
     font-size: 2rem;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0.1rem black dotted;
+}
+
 /* nav styles */
 
 .menu {
@@ -35,7 +42,7 @@ h1 {
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 0.25em 0.25em;
 }
 
 .nav-links {
@@ -84,6 +91,10 @@ h1 {
     text-decoration-color: currentColor;
 }
 
+:has(.menu[aria-expanded="true"]) .nav-links {
+    display: unset;
+}
+
 /* dark theme */
 html.dark {
     background-color: #3b3a47;
@@ -108,13 +119,18 @@ html.dark {
     color: #ff9776;
 }
 
-/* aria labels */
+/* footer */
 
-:has(.menu[aria-expanded="true"]) .nav-links {
-    display: unset;
+.url-link {
+        padding: 0.25rem 0.25rem;
+        color: rgb(0, 0, 0);
+        border: 0.1em black dotted;
+        text-decoration: underline;
+        font-size: 0.5em;
 }
 
-/* responsiveness: for over 636px wide */
+
+/* responsiveness: changes for over 636px wide */
 
 @media screen and (min-width: 636px) {
     .nav-links {
