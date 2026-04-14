@@ -1,0 +1,197 @@
+Astro interesting use cases
+
+.......................
+001: css vars in the frontmatter
+
+---
+[...]
+// you define css vars here in js
+const skillColor = 'crimson';
+const fontWeight = 'bold';
+const textCase = 'uppercase';
+---
+
+[...]
+<style define:vars={{skillColor, fontWeight, textCase}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+</style>
+
+
+.......................
+002: you can apply map to get list of items
+---
+[...]
+const skills = [
+    'HTML', 'CSS', 'JavaScript', 'React', 'Writing Docs'
+];
+---
+<p>My skills are:</p>
+<ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+</ul>
+
+
+.......................
+003: 
+---
+// frontmatter
+const identity = {
+    firstName: 'Sarah',
+    country: 'Canada',
+    occupation: 'Technical Writer',
+    hobbies: ['photography', 'birdwatching', 'baseball']
+};
+---
+<li>My name is {identity.firstName}</li>
+<li>I live in {identity.country} and I work as an {identity.occupation}</li>
+    {identity.hobbies.length >= 2 && 
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+    }
+
+.......................
+004: global.css + (scoped) <style>
+
+---
+// at the frontmatter
+import '../styles/global.css';
+---
+
+
+.......................
+005: conditional rendering
+---
+// conditional DOM rendering vars
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+[...]
+{happy && <p>I am happy to be learning Astro!</p>}
+{finished && <p>I finished this tutorial!</p>}
+{goal === 3 ? <p>My goal is to finish in 3 days</p> : <p>My goal is not 3 days</p>}
+
+
+.......................
+006: can use react components, and pass props to components
+- src/components/Navigation.astro
+
+then at the astro page:
+import Navigation from '../components/Navigation.astro';
+
+compounding has the same syntax:
+<Navigation />
+
+nesting props at Footer.astro.
+note that nesting should be done at the component level:
+
+---
+import Social from './social.astro';
+---
+<Social platform="github" username="thisuser" />
+
+
+then, to pass props as values to the component:
+<Component prop1={value1} prop2={value2} />
+
+
+// nested components
+import Navigation from './Navigation.astro';
+---
+<header>
+    <nav>
+        <Navigation />
+    </nav>    
+</header>
+
+
+.......................
+007: route pages are defined by src/pages/ and the file name
+(src/pages -- is required)
+- src/pages/index.astro -> /
+- src/pages/about.astro -> /about
+- src/pages/blog/post.astro -> /blog/post
+- src/pages/[slug].astro -> /:slug (dynamic route)
+- src/pages/[...catchall].astro -> /* (catch-all route)
+
+Astro will create a page for each .astro file in the src/pages directory, and the URL path will be based on the file name and its location within the directory structure. Dynamic routes allow you to capture URL parameters, and catch-all routes can match any path that doesn't match other defined routes.
+
+
+.......................
+008: when is nothing to add to the frontmatter, you can just leave it empty, or omit it entirely
+
+
+.......................
+009: when styling a component:
+
+<div id="main-menu" class="nav-links" >
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+</div>
+
+
+.......................
+010: scripts
+
+- src/scripts
+
+then create a script, and reference it within <body>,
+at the end of the body:
+
+<script>
+    import "../scripts/script.js";
+</script>
+
+
+Better location is the frontmatter, but it can be anywhere in the file. 
+The script will be bundled and included in the final output of the page.
+
+
+.......................
+011: layouts go in scr/layouts:
+- src/layouts
+
+then create a layout, and use it in the page:
+- src/layouts/MainLayout.astro
+at MainLayout.astro, add:
+<slot />
+to add the payload content to the layout, and
+
+then at the page:
+<MainLayout>
+	<h2>Subtitle</h2>
+</MainLayout>
+
+
+The <slot /> allows you to inject (or “slot in”) child content written between opening and closing <Component></Component> tags to any Component.astro file.
+
+
+.......................
+012: 
+If you need information to construct the page routes, write it inside getStaticPaths().
+
+To receive information in the HTML template of a page route, write it outside getStaticPaths().
+
+
+.......................
+extended:
+01:When using collections the Markdown and MDX files no longer automatically become pages using Astro’s file-based routing
+
+
+.......................
+extended:
+002:Anywhere you have a list of blog posts, like the tutorial’s Blog page (src/pages/blog.astro), you will need to replace import.meta.glob() with getCollection() as the way to fetch content and metadata from your Markdown files.
+
+
+.......................
+extended:
+003:
+

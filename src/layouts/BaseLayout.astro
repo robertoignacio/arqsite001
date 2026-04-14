@@ -1,0 +1,53 @@
+---
+// layout for the base repeating shape of pages
+
+// nested components
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// import global style
+import '../styles/global.css';
+
+// scoped style vars
+const skillColor = 'crimson';
+const fontWeight = 'bold';
+const textCase = 'uppercase';
+
+// prop forwarder
+const { pageTitle } = Astro.props;
+
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+
+        <style is:global define:vars={{skillColor, fontWeight, textCase}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
+
+		<Header />
+
+        <slot />
+
+		<Footer />
+
+		<script>
+			import "../scripts/menu.js";
+		</script>
+	</body>
+</html>

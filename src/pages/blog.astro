@@ -1,0 +1,33 @@
+---
+// collection
+import { getCollection } from "astro:content";
+
+// base page layout wrapper
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// components
+import BlogPost from '../components/BlogPost.astro';
+
+// return an array of objects for each blog post
+// returned by import.meta.glob()
+// use case: query data from local files
+// const allPosts = Object.values(import.meta.glob('./blog-posts/*.md', { eager: true }));
+const allPosts = await getCollection("blog");
+
+// passed props to BaseLayout
+const pageTitle = 'Blog';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+        <h1>{pageTitle}</h1>
+        <p>... entries</p>
+
+        <ul>
+            {
+                allPosts.map((post: any) => (
+                    <BlogPost url={`/blog-posts/${post.id}/`} title={post.data.title} />
+                ))
+            }
+        </ul>
+</BaseLayout>

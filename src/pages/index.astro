@@ -1,0 +1,14 @@
+---
+// base page layout
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// passed props to BaseLayout
+const pageTitle = 'Home Page';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+	<h1>{pageTitle}</h1>
+	<p>Home page content</p>
+
+</BaseLayout>

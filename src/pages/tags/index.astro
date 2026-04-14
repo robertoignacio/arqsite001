@@ -1,0 +1,27 @@
+---
+// scoped style
+import '../../styles/tags.css';
+
+// collection
+import { getCollection } from "astro:content";
+
+// component
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// get all posts from collection files
+const allPosts = await getCollection("blog");
+
+// return unique tags array
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
+// prop forwarder to BaseLayout
+const pageTitle = 'Tag Index';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+    <div class="tags">
+        {tags.map((tag) => (<p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>))}
+    </div>
+
+</BaseLayout>
