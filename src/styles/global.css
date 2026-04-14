@@ -25,13 +25,13 @@ h1 {
     font-size: 2.5rem;
 }
 
-/* nav styles */
+/* menu nav styles */
 
 .menu {
     background-color: #0d0950;
     border: none;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     padding: 5px 10px;
 }
@@ -47,10 +47,14 @@ h1 {
     text-align: center;
     padding: 10px 0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: #0d0950;
+}
+
+.nav-links a::first-letter {
+    text-transform: uppercase;
 }
 
 .nav-links hover,
@@ -58,9 +62,18 @@ h1 {
     background-color: #ff9776;
 }
 
+.nav-links a:hover, 
+.nav-links a:focus {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: currentColor;
+}
+
 /* dark theme */
 html.dark {
-    background-color: #0d0950;
+    background-color: #3b3a47;
     color: #fff;
 }
 
@@ -71,7 +84,7 @@ html.dark {
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
-    color: #0d0950;
+    color: #aeadc0;
 }
 
 .dark .nav-links a {
@@ -88,22 +101,31 @@ html.dark {
     display: unset;
 }
 
-/* responsiveness */
+.nav-links a[aria-current="page"],
+.nav-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: currentColor;
+}
+
+/* responsiveness: for over 636px wide */
 
 @media screen and (min-width: 636px) {
     .nav-links {
-        margin-left: 5em;
-        display: block;
+        margin-left: 0em;
+        display: flex;
         position: static;
         width: auto;
         background: none;
+        border: 1px solid red;
     }
     
     .nav-links a {
         display: inline-block;
-        padding: 15px 20px;
+        padding: 0.75em 0.5em;
+        background-color: #aedab4;
     }
-
     
     .menu {
         display: none;

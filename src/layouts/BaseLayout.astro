@@ -8,11 +8,6 @@ import Footer from '../components/Footer.astro';
 // import global style
 import '../styles/global.css';
 
-// scoped style vars
-const skillColor = 'crimson';
-const fontWeight = 'bold';
-const textCase = 'uppercase';
-
 // prop forwarder
 const { pageTitle } = Astro.props;
 
@@ -28,18 +23,6 @@ const { pageTitle } = Astro.props;
 	</head>
 	<body>
 
-        <style is:global define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-
 		<Header />
 
         <slot />
@@ -49,5 +32,6 @@ const { pageTitle } = Astro.props;
 		<script>
 			import "../scripts/menu.js";
 		</script>
+
 	</body>
 </html>

@@ -3,23 +3,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // passed props to BaseLayout
-const pageTitle = 'About Me';
+const pageTitle = 'Quién';
 
 const identity = {
-    firstName: 'Miu',
+    firstName: 'Roberto',
     country: 'Chile',
-    occupation: 'Dev',
+    occupation: 'Arquitecto',
     hobbies: ['photography', 'gardening', 'sculpture']
 };
 
 const skills = [
     'HTML', 'CSS', 'JavaScript', 'React', 'Writing Docs'
 ];
-
-// conditional DOM rendering vars
-const happy = true;
-const finished = true;
-const goal = 3;
 
 ---
 
@@ -38,8 +33,5 @@ const goal = 3;
         <ul>
             {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days</p> : <p>My goal is not 3 days</p>}
     
 </BaseLayout>
