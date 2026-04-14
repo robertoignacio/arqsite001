@@ -1,3 +1,2 @@
-# Astro Starter Template: Extended with Collections
-
-This branch has the blog files through collection.
+# Blog de un arquitecto
+Esta vez tendrá dominio web.
