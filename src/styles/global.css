@@ -5,11 +5,16 @@
 
 html {
     background-color: #393f46;
-    font-family: sans-serif;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 body {
     margin: 0 auto;
+    font-size: 16px;
     width: 100%;
     max-width: 80ch;
     padding: 1rem;
@@ -25,6 +30,11 @@ body {
 h1 {
     margin: 1rem 0;
     font-size: 2rem;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 /* header */
@@ -97,6 +107,38 @@ header {
     display: unset;
 }
 
+/* grid TBA */
+
+
+/* blog articles */
+.art-title {
+    line-height: normal;
+}
+
+.date {
+    color:#000;
+    font-size: 0.75em;
+}
+
+.author {
+    color: #000;
+    font-size: 0.7em;
+}
+
+/* footer */
+
+footer {
+    border: 1px solid black;
+}
+
+.url-link {
+        padding: 0.25rem 0.25rem;
+        color: rgb(0, 0, 0);
+        border: 0.1em black dotted;
+        text-decoration: underline;
+        font-size: 0.5em;
+}
+
 /* dark theme */
 
 html.dark {
@@ -126,26 +168,11 @@ html.dark body {
     color: #ff9776;
 }
 
-/* grid TBA */
-
-
-
-/* blog articles */
-
-
-/* footer */
-
-footer {
-    border: 1px solid black;
+.dark .date {
+    color: #ff9776;
 }
 
-.url-link {
-        padding: 0.25rem 0.25rem;
-        color: rgb(0, 0, 0);
-        border: 0.1em black dotted;
-        text-decoration: underline;
-        font-size: 0.5em;
-}
+
 
 /* responsiveness: changes for over 636px wide */
 
