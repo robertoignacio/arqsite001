@@ -1,12 +1,17 @@
-.tags {
+.tags-container {
     display: flex;
+    align-content: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
+    row-gap: 0.2em;
+    column-gap: 0.2em;
+    border: dotted 1px #707070;
+    margin-bottom: 1em;
 }
 
 .tag {
-    margin: 1em 0.5em 1em;
     border: dotted 1px #707070;
-    padding: 0.5em 0.75em;
+    padding: 0.2em 0.45em;
     font-size: 0.75em;
 }
 

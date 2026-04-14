@@ -125,6 +125,15 @@ header {
     font-size: 0.7em;
 }
 
+article h2 {
+    font-size: 1.1em;
+}
+
+article p {
+    font-size: 0.9em;
+    text-align: justify;
+}
+
 /* footer */
 
 footer {
