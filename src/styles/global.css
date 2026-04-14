@@ -14,7 +14,7 @@ body {
     max-width: 80ch;
     padding: 1rem;
     line-height: 1.5;
-    background-color: #ffffff;
+    background-color: #dbdbdb;
     height: 100vh;
 }
 
@@ -27,14 +27,14 @@ h1 {
     font-size: 2rem;
 }
 
+/* header */
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 0.1rem black dotted;
+    border: 1px black solid;
 }
-
-/* nav styles */
 
 .menu {
     background-color: #858585;
@@ -91,19 +91,26 @@ header {
     text-decoration-color: currentColor;
 }
 
+/* menu toggle */
+
 :has(.menu[aria-expanded="true"]) .nav-links {
     display: unset;
 }
 
 /* dark theme */
+
 html.dark {
-    background-color: #3b3a47;
+    background-color: #393f46;
     color: #fff;
 }
 
+html.dark body {
+    background-color: #707070;
+}
+
 .dark .menu {
-    background-color: #fff;
-    color: #000;
+    background-color: #707070;
+    color: #fff;
 }
 
 .dark .nav-links a:hover,
@@ -119,7 +126,18 @@ html.dark {
     color: #ff9776;
 }
 
+/* grid TBA */
+
+
+
+/* blog articles */
+
+
 /* footer */
+
+footer {
+    border: 1px solid black;
+}
 
 .url-link {
         padding: 0.25rem 0.25rem;
@@ -128,7 +146,6 @@ html.dark {
         text-decoration: underline;
         font-size: 0.5em;
 }
-
 
 /* responsiveness: changes for over 636px wide */
 
@@ -139,13 +156,13 @@ html.dark {
         position: static;
         width: auto;
         background: none;
-        border: 1px solid red;
+        border: 0.1em dotted red;
     }
     
     .nav-links a {
         display: inline-block;
         padding: 0.75em 0.5em;
-        background-color: #aedab4;
+        border: 0.1em dotted blue;
     }
     
     .menu {

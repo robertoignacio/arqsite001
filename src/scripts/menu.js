@@ -1,3 +1,5 @@
+// toggle: style class dark
+
 const menu = document.querySelector('.menu');
 
 menu?.addEventListener('click', () => {
