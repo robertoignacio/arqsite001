@@ -50,18 +50,33 @@ header {
     margin-bottom: 1em;
 }
 
-.header-flex {
+/* header-flex-container holds [sitename-box] [nav-theme-container] */
+.header-flex-container {
     display: flex;
     justify-content: space-between;
 }
 
-/* nav block */
+.sitename-box {
+    font-size: 2.5rem;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    border: 1px solid red;
+}
+
+/* nav-theme-container holds [nav-links] [themeToggle] */
+.nav-theme-container {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid red;
+}
 
 .nav-links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 0;
+    align-items: flex-end;
     border: 1px solid purple;
 }
 
@@ -70,9 +85,9 @@ header {
 .nav-links a {
     display: block;
     text-align: center;
-    padding: 10px 15px;
+    padding: 0.8em 1em;
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
     text-transform: lowercase;
     color: #0d0950;
@@ -107,16 +122,6 @@ header {
     text-decoration-thickness: 0.2em;
     text-decoration-color: currentColor;
 }
-
-/* menu toggle
-this rule means: if menu has aria-expanded attribute,
-display nav-links
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-    display: unset;
-}
-*/
-
 
 /* home grid TBA */
 
