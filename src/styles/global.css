@@ -38,7 +38,7 @@ h1 {
 }
 
 ul {
-    list-style-type: square;
+    list-style: none;
 }
 
 /* header */
@@ -115,12 +115,36 @@ header {
 /* grid TBA */
 
 
-/* blog articles */
 
-.qwe {
-    color: red;
+
+/* about styles */
+.about p {
+    text-align: start;
 }
 
+.about ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0;
+    row-gap: 1px;
+    column-gap: 1px;
+}
+
+.about li {
+    font-size: 0.8em;
+    border: 1px solid #ff9776;
+    padding: 1px 2.5px;
+}
+
+
+/* blog articles styles */
 
 .art-title {
     line-height: normal;

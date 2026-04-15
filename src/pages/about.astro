@@ -6,32 +6,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'Quién';
 
 const identity = {
-    firstName: 'Roberto',
+    firstName: 'Roberto I. Villalón Sanguinetti',
     country: 'Chile',
-    occupation: 'Arquitecto',
-    hobbies: ['photography', 'gardening', 'sculpture']
+    occupation: ['Arquitecto', 'mano de obra calificada'],
 };
 
 const skills = [
-    'HTML', 'CSS', 'JavaScript', 'React', 'Writing Docs'
+    'Problem Solving', 
+    'Desarrollo Web', 
+    'Programación Python para ETL',
+    'Programación en JS/TypeScript + CSS', 
+    'Comunicación Estratégica', 
+    'Levantar Requerimientos', 
+    'Proceso de soldadura SMAW', 
+    'Faenas de hormigonado',
+    'Carpintería en maderas',      
+    'Diseño', 
+    'Jardinería', 
+    'Huertos', 
+    'Levantamiento Topográfico',
+    'Riego', 
+    'Instalaciones Sanitarias',
+    'Estructuras', 
+    'Iluminación',
+    'Diseñar Eventos',
+    'Arquitectura',
+    'Dibujo CAD',
+    'BIM',
+    'MS Excel',
+    'MS Power BI',
+    'Estadística y Probabilidades',
+    'Fotografía',
+    'Cocina',
+    'Escalada Libre',
+    'Instalación de Anclajes',
 ];
-
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
+    <article class="about">
         <h1>{pageTitle}</h1>
-        <p>Some facts about me</p>
-        <ul>
-            <li>My name is {identity.firstName}</li>
-            <li>I live in {identity.country} and I work as an {identity.occupation}</li>
-            {identity.hobbies.length >= 2 && 
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-    
+        <p>Mi nombre es {identity.firstName}, resido en {identity.country}.</p>
+        <p>Me desempeño en <em>problem-solving</em> (resolución de problemas) aplicados en proyectos de arquitectura que se construyen, y en tecnología y negocios. Intermedio entre el lado de negocio y el lado técnico, cuando no asumo alguno.</p>
+      
+        <p>Estoy titulado como {identity.occupation[0]} en la UTFSM (Valparaíso, Chile), y he completado cursos en distintas disciplinas. He medido mis capacidades con gente nacional y de otros países.</p>
+        <p>Como pasatiempo resuelvo reparaciones, construcciones o programación, como {identity.occupation[1]}.</p>
+        
+        <p>He resuelto distintos casos, lo que me ha expuesto a aprender habilidades diversas, tales como:</p> 
+        <ul>{skills.map(s => <li>{s}</li>)}</ul>
+    </article>
+
 </BaseLayout>
