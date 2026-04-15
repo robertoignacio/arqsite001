@@ -172,13 +172,22 @@ article p {
 /* footer */
 
 footer {
-    border: 1px solid black;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.5em;
+    border: 0.1em dotted black;
+}
+
+footer p {
+    font-size: 0.8em;
 }
 
 .url-link {
         padding: 0.25rem 0.25rem;
         color: rgb(0, 0, 0);
-        border: 0.1em black dotted;
+        background-color: #fff;
         text-decoration: underline;
         font-size: 0.75em;
 }
@@ -214,6 +223,10 @@ html.dark body {
 
 .dark .date {
     color: #ff9776;
+}
+
+.dark .url-link {
+    background-color: #ff9776;
 }
 
 
