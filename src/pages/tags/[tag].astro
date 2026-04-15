@@ -8,7 +8,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 // component
-import BlogPost from '../../components/BlogPost.astro';
+import ArticleBlock from '../../components/ArticleBlock.astro';
 
 // returns an array list of page routes
 // Make sure that every blog post contains at least one tag, written as an array, e.g. tags: ["blog"].
@@ -43,6 +43,6 @@ const { posts } = Astro.props;
 <BaseLayout pageTitle={tag}>
   <p>Artículos escritos con el tema {tag}</p>
   <ul>
-    { posts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />) }
+    { posts.map((post: any) => <ArticleBlock url={`/blog-posts/${post.id}/`} title={post.data.title} />) }
   </ul>
 </BaseLayout>

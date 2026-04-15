@@ -37,6 +37,10 @@ h1 {
     font-variation-settings: "wdth" 100;
 }
 
+ul {
+    list-style-type: square;
+}
+
 /* header */
 
 header {
@@ -44,6 +48,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     border: 1px black solid;
+    margin-bottom: 1em;
 }
 
 .menu {
@@ -111,6 +116,12 @@ header {
 
 
 /* blog articles */
+
+.qwe {
+    color: red;
+}
+
+
 .art-title {
     line-height: normal;
 }

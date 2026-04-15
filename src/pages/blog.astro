@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // components
+import ArticleBlock from '../components/ArticleBlock.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 // return an array of objects for each blog post
@@ -15,18 +16,18 @@ import BlogPost from '../components/BlogPost.astro';
 const allPosts = await getCollection("blog");
 
 // passed props to BaseLayout
-const pageTitle = 'Blog';
+const pageTitle = 'Artículos';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
         <h1>{pageTitle}</h1>
-        <p>... entries</p>
+        <p>Blog</p>
 
         <ul>
             {
                 allPosts.map((post: any) => (
-                    <BlogPost url={`/blog-posts/${post.id}/`} title={post.data.title} />
+                    <ArticleBlock url={`/blog-posts/${post.id}/`} title={post.data.title} />
                 ))
             }
         </ul>
