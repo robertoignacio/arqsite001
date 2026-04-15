@@ -186,8 +186,8 @@ footer p {
 
 .url-link {
         padding: 0.25rem 0.25rem;
-        color: rgb(0, 0, 0);
-        background-color: #fff;
+        color: #fff;
+        background-color: #000;
         text-decoration: underline;
         font-size: 0.75em;
 }
@@ -204,7 +204,7 @@ html.dark body {
 }
 
 .dark .menu {
-    background-color: #707070;
+    background-color: #000;
     color: #fff;
 }
 
@@ -226,9 +226,8 @@ html.dark body {
 }
 
 .dark .url-link {
-    background-color: #ff9776;
+    background-color: #000000;
 }
-
 
 
 /* responsiveness: changes for over 636px wide */
