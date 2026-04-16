@@ -6,8 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'Quién';
 
 const identity = {
-    firstName: 'Roberto I. Villalón Sanguinetti',
-    country: 'Chile',
+    firstName: 'Roberto Villalón Sanguinetti',
     occupation: ['mano de obra calificada', 'Arquitecto'],
 };
 
@@ -16,7 +15,11 @@ const skills = [
     'Desarrollo Web', 
     'Programación Python para ETL',
     'Programación en JS/TypeScript + CSS', 
-    'React', 'Next.js', 'Astro', 'SQL', 'Bash',
+    'React', 
+    'Next.js', 
+    'Astro', 
+    'SQL', 
+    'Bash',
     'Comunicación Estratégica', 
     'Resiliencia',
     'Levantar Requerimientos', 
@@ -41,11 +44,11 @@ const skills = [
     'MS Excel',
     'MS Power BI',
     'Estadística y Probabilidades',
-    'Lenguaje Inglés',
+    'Lenguaje Inglés US',
     'Fotografía',
     'Cocina',
     'Escalada Libre',
-    'Instalación de Anclajes',
+    'Instalación de Anclajes y Cables',
 ];
 ---
 
@@ -53,13 +56,11 @@ const skills = [
 
     <article class="about">
         <h1>{pageTitle}</h1>
-        <p>Mi nombre es {identity.firstName}, resido en {identity.country}.</p>
-        <p>Me desempeño en <em>problem-solving</em> (resolución de problemas) aplicado a proyectos de arquitectura que se construyen, y en tecnología y negocios. Intermedio entre el lado de negocio y el lado técnico, cuando no asumo alguno.</p>
-      
-        <p>Estoy titulado como Arquitecto en la UTFSM (Valparaíso, Chile), y he completado cursos en distintas disciplinas. He medido mis capacidades con gente nacional y de otros países.</p>
-        <p>Como pasatiempo cultivo plantas, hago esculturas, y reparo, construyo o programo, como {identity.occupation[0]}.</p>
-        
-        <p>He resuelto distintos casos, lo que me ha expuesto a aprender habilidades diversas, tales como:</p> 
+        <p>Mi nombre es {identity.firstName}, {identity.occupation[1]}, chileno, titulado en la UTFSM (Valparaíso, Chile). He completado cursos en distintas disciplinas para profundizar habilidades.</p>
+        <p>Desarrollo y documento mis procesos de resolución de problemas (<em>problem-solving</em>), que aplico en proyectos de arquitectura y tecnologías de información, y también escenarios que los afectan.</p>
+        <p>Aprendí a traducir requerimientos e intermediar entre el lado de negocio y el lado técnico.</p>
+        <p>Como pasatiempo cultivo plantas, diseño, reparo, construyo o programo.</p>        
+        <p>He resuelto distintos encargos, de variada envergadura, lo que me ha expuesto a aprender:</p> 
         <ul>{skills.map(s => <li>{s}</li>)}</ul>
     </article>
 
